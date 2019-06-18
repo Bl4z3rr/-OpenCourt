@@ -1,8 +1,16 @@
 class GamesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_game, only: [:show, :update, :edit, :destroy]
+
   def index
+    # @games = Game.where.not(latitude: nil, longitude: nil)
     @games = Game.all
+    @markers = @games.map do |game|
+      {
+        lat: game.latitude,
+        lng: game.longitude
+      }
+    end
   end
 
   def show
