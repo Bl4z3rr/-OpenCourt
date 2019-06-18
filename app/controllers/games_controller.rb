@@ -9,7 +9,8 @@ class GamesController < ApplicationController
       {
         lat: game.latitude,
         lng: game.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { game: game })
+        infoWindow: render_to_string(partial: "infowindow", locals: { game: game }),
+        image_url: helpers.asset_url('ballz.png')
       }
     end
   end
