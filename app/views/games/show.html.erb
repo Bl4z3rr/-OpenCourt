@@ -1,0 +1,15 @@
+<h1> <%= @game.name %> </h1>
+  <li> <%= @game.location %> </li>
+  <li><%= @game.price %> </li>
+  <li><%= @game.description %></li>
+  <li><%= @game.num_of_players %></li>
+  <li><%= @game.date %></li>
+  <li><%= @game.duration %></li>
+</div>
+<%= link_to edit_game_path(@game) do  %>
+  <i class="fas fa-pencil-alt"></i>
+<% end %>
+<%= link_to(game_path(@game), method: :delete) do %>
+  <i class="fas fa-trash"></i>
+<% end %>
+

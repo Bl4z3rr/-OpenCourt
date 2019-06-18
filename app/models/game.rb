@@ -1,5 +1,5 @@
 class Game < ApplicationRecord
-  belongs_to :users
+  has_many :users
   has_many :bookings
   validates :name, presence: true
   validates :location, presence: true
